@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Services</title>
+    <link rel="stylesheet" href="wedService.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+
+
+    <section class="wedding-hero">
+        <div class="overlay">
+            <div class="wedding-text">
+                <h1>More Than Moments .. Memories That Breathe</h1>
+                <h2>PixelNest Wedding Photography</h2>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>💍 What Our Couples Say</h2>
+        <div class="carousel" id="testimonial-carousel">
+            <div class="slide active">
+                <img src="../assets/couple1.avif" alt="Couple 1">
+                <blockquote>
+                    “They didn’t just capture images, they froze our memories.”
+                    <span>– A & R</span>
+                </blockquote>
+            </div>
+            <div class="slide">
+                <img src="../assets/couple2.jpeg" alt="Couple 2">
+                <blockquote>
+                    “Every emotion, every smile… perfectly preserved forever.”
+                    <span>– S & T</span>
+                </blockquote>
+            </div>
+            <div class="slide">
+                <img src="../assets/couple3.jpg" alt="Couple 3">
+                <blockquote>
+                    “PixelNest made our big day timeless.”
+                    <span>– M & N</span>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="wedding-wrapper">
+        <div class="service-timeline">
+            <h2>Wedding Services</h2>
+            <ul>
+                <li>
+                    <span class="icon">💍</span>
+                    <div class="text">
+                        <h3>Pre-Wedding Shoot</h3>
+                        <p>Creative shoots at scenic locations</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">🌿</span>
+                    <div class="text">
+                        <h3>Haldi, Mehndi, Sangeet</h3>
+                        <p>Traditional rituals covered with flair</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">📸</span>
+                    <div class="text">
+                        <h3>Candid & Portraits</h3>
+                        <p>Moments captured artistically</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">📖</span>
+                    <div class="text">
+                        <h3>Albums & Digital Delivery</h3>
+                        <p>Elegant layouts + high-res downloads</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Basic</h3>
+
+                    </div>
+                    <div class="flip-back">
+                        <p>Includes pre-wedding shoot</p>
+                        <p>6 hours event coverage</p>
+                        <p>100+ edited images</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Premium</h3>
+
+                    </div>
+                    <div class="flip-back">
+                        <p>Full day coverage</p>
+                        <p>Album design</p>
+                        <p>Digital gallery</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Deluxe</h3>
+
+                    </div>
+                    <div class="flip-back">
+                        <p>All event coverage</p>
+                        <p>Luxury photo album</p>
+                        <p>30 printed photos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <a href="contact.html" class="contact-fixed" title="Call Us">
+        <i class="fas fa-message"></i>
+    </a>
+
+    <div id="footer-placeholder"></div>
+
+
+
+
+    <script>
+        async function loadPartials() {
+            const nav = await fetch('nav.html').then(res => res.text());
+            document.getElementById('nav-placeholder').innerHTML = nav;
+
+
+            const currentPage = window.location.pathname.split("/").pop();
+
+            const hideIfMatch = ["wedService.html", "portraitService.html", "eventService.html", "brandServices.html"];
+            if (hideIfMatch.includes(currentPage)) {
+                document.getElementById("nav-services")?.remove();
+            }
+
+            if (currentPage === "booking.html") {
+                document.getElementById("nav-booking")?.remove();
+                document.getElementById("nav-booking")?.remove();
+
+            }
+
+            if (currentPage === "index.html") {
+                document.getElementById("nav-home")?.remove();
+            }
+
+            const footer = await fetch('footer.html').then(res => res.text());
+            document.getElementById('footer-placeholder').innerHTML = footer;
+        }
+        loadPartials();
+    </script>
+
+
+
+
+    <script src="https://kit.fontawesome.com/2020ce11a6.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

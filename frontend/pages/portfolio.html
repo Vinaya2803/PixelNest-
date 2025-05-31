@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolioStyle.css">
+</head>
+
+<body>
+    <a href="index.html" class="back-arrow" title="Back to Home">&#8592;Back to Home</a>
+
+    <div class="container">
+        <div class="left-text">
+            <h2 class="heading">Stories We've Captured</h2>
+            <p class="subheading">From quiet glances to joyful celebrations, these frames echo real stories.
+                Every photo is a window into a moment worth remembering. We don’t just capture photos, we preserve
+                emotions.
+            </p>
+
+        </div>
+        <div class="gallery">
+            <div class="box row2" style="background-image: url(../assets/nature.jpg);">Nature</div>
+            <div class="box col2" style="background-image: url(../assets/event2.jpg);">Event</div>
+            <div class="box" style="background-image: url(../assets/nature1.jpeg);">Sunset</div>
+            <div class="box row2" style="background-image: url(../assets/portfolio.jpg);">Portfolio</div>
+            <div class="box col2" style="background-image: url(../assets/brand2.jpg);">Brand</div>
+            <div class="box" style="background-image: url(../assets/wedding2.jpg);">Wedding</div>
+            <div class="box col2" style="background-image: url(../assets/nature4.jpeg);">Street</div>
+        </div>
+    </div>
+
+
+    <!-- Story Highlights / Case Studies -->
+    <section class="story-highlights">
+        <h2>Story Highlights</h2>
+        <div class="stories-grid">
+
+            <!-- Story 1 -->
+            <div class="story-card">
+                <img src="../assets/brandProducts.PNG" alt="Product Photoshoot for LuxeAura">
+                <h3>Product Photoshoot for LuxeAura</h3>
+                <p style="font-weight: 600;">Vibrant compositions highlighting premium skincare and wellness products
+                    with style and clarity.</p>
+                <div class="full-story" style="display: none;">
+                    <p>
+                        For LuxeAura’s latest line of beauty and wellness essentials, we curated a refined tabletop
+                        shoot emphasizing elegance and detail.
+                        The setup featured soft natural lighting and neutral backgrounds to ensure every product stood
+                        out.
+                    </p>
+                    <p>
+                        Our focus was on clean compositions, texture accuracy, and brand alignment—delivering polished
+                        visuals ready for digital campaigns, packaging, and e-commerce platforms.
+                    </p>
+                </div>
+                <button class="toggle-story">Read More ↓</button>
+            </div>
+
+
+            <!-- Story 2 -->
+            <div class="story-card">
+                <img src="../assets/goaWed.PNG" alt="Goa Beach Wedding">
+                <h3>Goa Beach Wedding</h3>
+                <p style="font-weight: 600;">A dreamy seaside celebration with soft tones and candid emotions.</p>
+                <div class="full-story" style="display: none;">
+                    <p>
+                        Set against the golden sands and clear blue skies of Goa, this vibrant daytime wedding radiated
+                        tropical charm and joyous celebration. Bright sunlit moments, colorful floral decor, and lively
+                        energy made every frame burst with life.
+                    </p>
+                    <p>
+                        From heartfelt vows to fun-filled dances by the waves, we captured the warmth, love, and
+                        spontaneous joy that defined this unforgettable seaside celebration.
+                    </p>
+                </div>
+                <button class="toggle-story">Read More ↓</button>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card">
+                <img src="../assets/brandlaunch.PNG" alt="Brand Launch Event">
+                <h3>Brand Launch Event</h3>
+                <p style="font-weight: 600;">High-energy branding moments captured with flair and precision.</p>
+                <div class="full-story" style="display: none;">
+                    <p>
+                        Our team documented the vibrant launch of a new fashion label in Mumbai. From stage setups to
+                        behind-the-scenes preparations, every image reflected the excitement and professionalism of the
+                        event.
+                    </p>
+                    <p>
+                        We focused on branding visuals, key guest moments, and dynamic ambiance to deliver a powerful
+                        visual narrative for the client’s post-launch campaign.
+                    </p>
+                </div>
+                <button class="toggle-story">Read More ↓</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call-to-Action -->
+    <section class="cta-section">
+        <h2>Let our next project be yours. Tell us your story.</h2>
+        <div class="cta-buttons">
+            <a href="booking.html" class="btn-book">📸 Book Now</a>
+            <a href="contact.html" class="btn-contact">💬 Get in Touch</a>
+        </div>
+    </section>
+
+
+
+    <script>
+        document.querySelectorAll('.toggle-story').forEach(button => {
+            button.addEventListener('click', () => {
+                const fullStory = button.previousElementSibling;
+                const isVisible = fullStory.style.display === 'block';
+
+                fullStory.style.display = isVisible ? 'none' : 'block';
+                button.textContent = isVisible ? 'Read More ↓' : 'Show Less ↑';
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

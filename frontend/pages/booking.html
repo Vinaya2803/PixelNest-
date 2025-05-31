@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session</title>
+    <link rel="stylesheet" href="bookingStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <section class="booking-section">
+        <div class="booking-container">
+            <h2>📸 Book a Session</h2>
+            <p>Let’s create something unforgettable together!</p>
+            <form class="booking-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g., +91 9876543210" required>
+
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="service">Select Service</label>
+                <select id="service" name="service" required>
+                    <option value="">-- Choose an option --</option>
+                    <option value="wedding">Wedding Photography</option>
+                    <option value="party">Event Coverage</option>
+                    <option value="corporate">Portrait </option>
+                    <option value="product">Product/Brand Photography</option>
+                </select>
+
+                <label for="message">Describe your event</label>
+                <textarea id="message" name="message" rows="4"
+                    placeholder="Anything else we should know? You can add your requirements."></textarea>
+
+                <button type="submit" class="primary-button">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+
+    <a href="contact.html" class="contact-fixed" title="Contact Us">
+        <i class="fas fa-message"></i>
+    </a>
+
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        async function loadPartials() {
+            const nav = await fetch('nav.html').then(res => res.text());
+            document.getElementById('nav-placeholder').innerHTML = nav;
+
+            const currentPage = window.location.pathname.split("/").pop();
+
+            const hideIfMatch = ["wedService.html", "portraitService.html", "eventService.html", "brandServices.html", "about.html", "contact.html", "booking.html"];
+            if (hideIfMatch.includes(currentPage)) {
+                document.getElementById("nav-services")?.remove();
+            }
+
+            if (currentPage === "booking.html") {
+                document.getElementById("nav-booking")?.remove();
+                document.getElementById("nav-booking")?.remove();
+
+            }
+
+            if (currentPage === "index.html") {
+                document.getElementById("nav-home")?.remove();
+            }
+
+            const footer = await fetch('footer.html').then(res => res.text());
+            document.getElementById('footer-placeholder').innerHTML = footer;
+        }
+        loadPartials();
+    </script>
+
+    <script src="https://kit.fontawesome.com/2020ce11a6.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

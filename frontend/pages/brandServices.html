@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand & Product Photography</title>
+    <link rel="stylesheet" href="brandServices.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2020ce11a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="hero">
+        <div class="overlay">
+            <div class="text">
+                <h1>Make Your Brand Stand Out</h1>
+                <h2>PixelNest Brand & Product Photography</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>📸 Brand Buzz</h2>
+        <div class="carousel" id="testimonial-carousel">
+            <div class="slide active">
+                <img src="../assets/brand.webp" alt="Brand Shoot 1">
+                <blockquote>
+                    “Our eCommerce sales spiked after their product shots!”
+                    <span>– Meera Fashions</span>
+                </blockquote>
+            </div>
+            <div class="slide">
+                <img src="../assets/brand2.jpg" alt="Brand Shoot 2">
+                <blockquote>
+                    “Clean, creative, and captivating – just what we needed.”
+                    <span>– Krafty Co.</span>
+                </blockquote>
+            </div>
+            <div class="slide">
+                <img src="../assets/brandlaunch.PNG" alt="Brand Shoot 3">
+                <blockquote>
+                    “They helped us reimagine our brand visuals. Amazing team!”
+                    <span>– GreenBite Organics</span>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <div class="service-timeline">
+            <h2>Brand & Product Services</h2>
+            <ul>
+                <li>
+                    <span class="icon">👜</span>
+                    <div class="text">
+                        <h3>Product Photography</h3>
+                        <p>Perfect lighting and angles for eCommerce platforms</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">📦</span>
+                    <div class="text">
+                        <h3>Packaging Shots</h3>
+                        <p>Showcase your product packaging with precision</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">👩‍💼</span>
+                    <div class="text">
+                        <h3>Brand Storytelling</h3>
+                        <p>Visuals that narrate your brand's purpose</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon">🎥</span>
+                    <div class="text">
+                        <h3>Creative Commercials</h3>
+                        <p>Short videos for social media and ads</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Startup</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>10 product photos</p>
+                        <p>Basic editing</p>
+                        <p>White background</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Business</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>25 styled photos</p>
+                        <p>Brand-consistent editing</p>
+                        <p>Social media ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <h3>Enterprise</h3>
+                    </div>
+                    <div class="flip-back">
+                        <p>50+ styled images + short videos</p>
+                        <p>Full-day shoot</p>
+                        <p>Creative direction included</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="contact.html" class="contact-fixed" title="Enquire Now">
+        <i class="fas fa-message"></i>
+    </a>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        async function loadPartials() {
+            const nav = await fetch('nav.html').then(res => res.text());
+            document.getElementById('nav-placeholder').innerHTML = nav;
+
+
+            const currentPage = window.location.pathname.split("/").pop();
+
+            const hideIfMatch = ["wedService.html", "portraitService.html", "eventService.html", "brandServices.html"];
+            if (hideIfMatch.includes(currentPage)) {
+                document.getElementById("nav-services")?.remove();
+            }
+
+            if (currentPage === "booking.html") {
+                document.getElementById("nav-booking")?.remove();
+                document.getElementById("nav-booking")?.remove();
+
+            }
+
+            if (currentPage === "index.html") {
+                document.getElementById("nav-home")?.remove();
+            }
+
+            const footer = await fetch('footer.html').then(res => res.text());
+            document.getElementById('footer-placeholder').innerHTML = footer;
+        }
+        loadPartials();
+    </script>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel .slide');
+        let current = 0;
+        function showNextSlide() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+        setInterval(showNextSlide, 4000);
+    </script>
+</body>
+
+</html>

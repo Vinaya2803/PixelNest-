@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us </title>
+    <link rel="stylesheet" href="aboutStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+    <section class="about-hero">
+
+    </section>
+
+    <section class="about-intro">
+        <div class="container">
+            <h2 class="title">Who We Are</h2>
+            <p>
+                PixelNest is a creative photography studio born from passion and perfected by years of experience.
+                From heartfelt wedding moments to crisp commercial visuals, we believe every frame tells a story.
+                Our team combines technical skill with artistic vision to deliver timeless imagery.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-values">
+        <div class="container grid">
+            <div class="value-box">
+                <i class="fas fa-heart"></i>
+                <h3>Passion-Driven</h3>
+                <p>We pour our heart into every shoot, treating each moment like it’s our own.</p>
+            </div>
+            <div class="value-box">
+                <i class="fas fa-star"></i>
+                <h3>Detail-Oriented</h3>
+                <p>From lighting to editing, we ensure every photo reflects perfection.</p>
+            </div>
+            <div class="value-box">
+                <i class="fas fa-users"></i>
+                <h3>Client-Focused</h3>
+                <p>Your satisfaction is our focus — we customize experiences to suit you.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-team">
+        <div class="container">
+            <h2 class="title">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <i class="fas fa-user-tie profile-icon"></i>
+                    <h4>Vinaya Bhosale</h4>
+                    <p>Founder & Lead Photographer</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-user-gear profile-icon"></i>
+                    <h4>Pradnya Khabale</h4>
+                    <p>Senior Photo Editor</p>
+                </div>
+                <div class="team-member">
+                    <i class="fas fa-users profile-icon"></i>
+                    <h4>Rucha Mohite</h4>
+                    <p>Studio Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <div class="cta-box">
+            <h2>Ready to Capture Magic?</h2>
+            <a href="contact.html" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+   <script>
+        async function loadPartials() {
+            const nav = await fetch('nav.html').then(res => res.text());
+            document.getElementById('nav-placeholder').innerHTML = nav;
+
+            const currentPage = window.location.pathname.split("/").pop();
+
+            const hideIfMatch = ["wedService.html", "portraitService.html", "eventService.html", "brandServices.html", "about.html", "contact.html", "booking.html"];
+            if (hideIfMatch.includes(currentPage)) {
+                document.getElementById("nav-services")?.remove();
+            }
+
+            if (currentPage === "booking.html") {
+                document.getElementById("nav-booking")?.remove();
+                document.getElementById("nav-booking")?.remove();
+
+            }
+
+            if (currentPage === "index.html") {
+                document.getElementById("nav-home")?.remove();
+            }
+
+            const footer = await fetch('footer.html').then(res => res.text());
+            document.getElementById('footer-placeholder').innerHTML = footer;
+        }
+        loadPartials();
+    </script>
+</body>
+
+</html>

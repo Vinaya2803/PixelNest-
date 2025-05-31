@@ -1,0 +1,87 @@
+
+.booking-section {
+    padding: 50px 20px;
+    
+}
+
+.booking-container {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+}
+
+.booking-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.booking-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+
+.primary-button{
+    display: block;
+    margin: 0 auto;
+} 
+
+
+.contact-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5e5e;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-fixed:hover {
+  background-color: #e04848;
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
