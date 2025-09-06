@@ -20,3 +20,5 @@ It showcases services, portfolios, client testimonials, and enables users to boo
 - **CSS3** – Styling and responsive design  
 
 ---
+## The Project is deployed on Netlify 
+ - https://pixelnests.netlify.app/
