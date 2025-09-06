@@ -77,6 +77,16 @@ a{
         color: rgb(15, 110, 154);
     }
 
+.title2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      
+    }
+.title2:hover{
+        cursor: pointer;
+        color: rgb(15, 110, 154);
+    }
+
 
 /* navbar an top banner */
 .hover-links{
